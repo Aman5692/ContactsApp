@@ -15,9 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        getContactsList(urlString: "http://gojek-contacts-app.herokuapp.com/contacts.json", handler: {
-          (list, error) in
-            if(error == nil && list != nil) {
+//        getContactsList(handler: {
+//          (list, error) in
+//            if(error == nil && list != nil) {
+//                print("Success")
+//            }
+//        })
+        
+        getContactDetails(urlString: "http://gojek-contacts-app.herokuapp.com/contacts/11156.json", handler: { (model, error) in
+            if(error == nil && model != nil) {
                 print("Success")
             }
         })

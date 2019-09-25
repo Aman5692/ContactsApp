@@ -48,12 +48,6 @@ class ContactListModel {
         guard !firstName.isEmpty else {
             return false
         }
-        guard !lastName.isEmpty else {
-            return false
-        }
-        guard !profilePic.isEmpty else {
-            return false
-        }
         guard !url.isEmpty else {
             return false
         }

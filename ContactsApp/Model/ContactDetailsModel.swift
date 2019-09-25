@@ -15,7 +15,6 @@ class ContactDetailsModel {
     var lastName : String = ""
     var profilePic : String = ""
     var favorite : Bool = false
-    var url : String = ""
     var phoneNumber : String = ""
     var email : String = ""
     
@@ -35,9 +34,6 @@ class ContactDetailsModel {
         if let value = data["favorite"] as? Bool {
             favorite = value
         }
-        if let value = data["url"] as? String {
-            url = value
-        }
         if let value = data["phone_number"] as? String {
             phoneNumber = value
         }
@@ -54,21 +50,6 @@ class ContactDetailsModel {
             return false
         }
         guard !firstName.isEmpty else {
-            return false
-        }
-        guard !lastName.isEmpty else {
-            return false
-        }
-        guard !profilePic.isEmpty else {
-            return false
-        }
-        guard !url.isEmpty else {
-            return false
-        }
-        guard !phoneNumber.isEmpty else {
-            return false
-        }
-        guard !email.isEmpty else {
             return false
         }
         return true
