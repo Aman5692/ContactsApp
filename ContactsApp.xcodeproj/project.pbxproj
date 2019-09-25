@@ -15,6 +15,9 @@
 		21685C78233A6AFD009DF579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21685C76233A6AFD009DF579 /* LaunchScreen.storyboard */; };
 		21685C83233A6AFD009DF579 /* ContactsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21685C82233A6AFD009DF579 /* ContactsAppTests.swift */; };
 		21685C8E233A6AFD009DF579 /* ContactsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21685C8D233A6AFD009DF579 /* ContactsAppUITests.swift */; };
+		21685C9D233A6EA6009DF579 /* NetworkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21685C9C233A6EA6009DF579 /* NetworkUtility.swift */; };
+		21685CA0233B681D009DF579 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21685C9F233B681D009DF579 /* ContactModel.swift */; };
+		21685CA2233B8A3A009DF579 /* ContactDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21685CA1233B8A3A009DF579 /* ContactDetailsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		21685C89233A6AFD009DF579 /* ContactsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21685C8D233A6AFD009DF579 /* ContactsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsAppUITests.swift; sourceTree = "<group>"; };
 		21685C8F233A6AFD009DF579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21685C9C233A6EA6009DF579 /* NetworkUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtility.swift; sourceTree = "<group>"; };
+		21685C9F233B681D009DF579 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		21685CA1233B8A3A009DF579 /* ContactDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		21685C6A233A6AFA009DF579 /* ContactsApp */ = {
 			isa = PBXGroup;
 			children = (
+				21685C9E233B6803009DF579 /* Model */,
+				21685C9B233A6E03009DF579 /* Network */,
 				21685C6B233A6AFA009DF579 /* AppDelegate.swift */,
 				21685C6D233A6AFA009DF579 /* SceneDelegate.swift */,
 				21685C6F233A6AFA009DF579 /* ContentView.swift */,
@@ -134,6 +142,23 @@
 				21685C8F233A6AFD009DF579 /* Info.plist */,
 			);
 			path = ContactsAppUITests;
+			sourceTree = "<group>";
+		};
+		21685C9B233A6E03009DF579 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				21685C9C233A6EA6009DF579 /* NetworkUtility.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		21685C9E233B6803009DF579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21685C9F233B681D009DF579 /* ContactModel.swift */,
+				21685CA1233B8A3A009DF579 /* ContactDetailsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +293,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				21685C6C233A6AFA009DF579 /* AppDelegate.swift in Sources */,
+				21685C9D233A6EA6009DF579 /* NetworkUtility.swift in Sources */,
 				21685C6E233A6AFA009DF579 /* SceneDelegate.swift in Sources */,
+				21685CA0233B681D009DF579 /* ContactModel.swift in Sources */,
 				21685C70233A6AFA009DF579 /* ContentView.swift in Sources */,
+				21685CA2233B8A3A009DF579 /* ContactDetailsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
