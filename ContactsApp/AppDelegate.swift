@@ -11,20 +11,24 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        getContactsList(handler: {
-//          (list, error) in
-//            if(error == nil && list != nil) {
-//                print("Success")
-//            }
-//        })
-        
-        getContactDetails(urlString: "http://gojek-contacts-app.herokuapp.com/contacts/11156.json", handler: { (model, error) in
-            if(error == nil && model != nil) {
-                print("Success")
+        NetworkUtility.getContactsList(handler: {
+          (list, error) in
+            if(error == nil && list != nil) {
+                print("Contact list received successfully")
+                for contact : ContactListModel in list! {
+                    if(!contact.url.isEmpty) {
+                        print("Fetch contact details for URL", contact.url)
+                        NetworkUtility.getContactDetails(urlString: contact.url, handler: { (model, error) in
+                            if(error == nil && model != nil) {
+                                print("Contact details fetched successfully")
+                                NetworkUtility.updateContactDetails(contact: model!)
+                            }
+                        })
+                        break;
+                    }
+                }
             }
         })
         return true

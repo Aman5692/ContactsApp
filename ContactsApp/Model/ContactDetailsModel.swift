@@ -46,12 +46,37 @@ class ContactDetailsModel {
     }
     
     func validateModel() -> Bool {
-        guard id > 0 else {
-            return false
-        }
         guard !firstName.isEmpty else {
             return false
         }
         return true
+    }
+    
+    func toDictionary() -> Dictionary<String, Any> {
+        var dictionary = Dictionary<String, Any>.init()
+        if(self.id > 0) {
+            dictionary["id"] = self.id
+        }
+        dictionary["first_name"] = self.firstName
+        dictionary["last_name"] = self.lastName
+        dictionary["email"] = self.email
+        dictionary["phone_number"] = self.phoneNumber
+        dictionary["favorite"] = self.favorite
+        if(!self.profilePic.isEmpty) {
+            dictionary["profile_pic"] = self.profilePic
+        }
+        print("Contact Dictionary : ", dictionary.description)
+        return dictionary
+    }
+    
+    func toString() -> String {
+        do{
+            let dictionary = self.toDictionary()
+            let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+            return jsonData.description
+        } catch {
+            print(error.localizedDescription)
+            return ""
+        }
     }
 }
