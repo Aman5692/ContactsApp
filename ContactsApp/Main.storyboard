@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Contact-->
         <scene sceneID="Svj-Xp-zXF">
             <objects>
                 <tableViewController id="VQF-MG-MaZ" customClass="ContactTableViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,6 +52,7 @@
                                         <constraint firstItem="XXd-70-0S9" firstAttribute="top" secondItem="5Eq-1r-nDR" secondAttribute="top" constant="24" id="oEC-f5-00b"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <connections>
                                     <outlet property="acountNameLabel" destination="XXd-70-0S9" id="uv4-oA-4rY"/>
                                     <outlet property="favouriteImageView" destination="3th-Sq-qY9" id="t8i-KE-Ln0"/>
@@ -65,9 +66,12 @@
                             <outlet property="delegate" destination="VQF-MG-MaZ" id="nOe-Ie-hs9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="00h-VG-IPl">
-                        <barButtonItem key="leftBarButtonItem" title="Groups" id="Euo-wy-hL8"/>
+                    <navigationItem key="navigationItem" title="Contact" id="00h-VG-IPl">
+                        <barButtonItem key="leftBarButtonItem" title="Groups" id="Euo-wy-hL8">
+                            <color key="tintColor" red="0.31372549019607843" green="0.8901960784313725" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qXB-ls-qPo">
+                            <color key="tintColor" red="0.31372549019607843" green="0.8901960784313725" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="createNewContact:" destination="VQF-MG-MaZ" id="AsV-Ex-6fA"/>
                             </connections>
@@ -86,6 +90,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WlN-7T-999">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

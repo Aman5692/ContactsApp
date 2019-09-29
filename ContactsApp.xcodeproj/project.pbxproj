@@ -20,9 +20,10 @@
 		21685CA2233B8A3A009DF579 /* ContactDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21685CA1233B8A3A009DF579 /* ContactDetailsModel.swift */; };
 		21CE47A823407F070060A9D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CE47A723407F070060A9D9 /* Main.storyboard */; };
 		21CE47AA234082340060A9D9 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CE47A9234082340060A9D9 /* ContactTableViewController.swift */; };
-		21CE47AC234083170060A9D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CE47AB234083170060A9D9 /* Constants.swift */; };
+		21CE47AC234083170060A9D9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CE47AB234083170060A9D9 /* Utility.swift */; };
 		21CE47AE23408C550060A9D9 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CE47AD23408C550060A9D9 /* SpinnerViewController.swift */; };
 		21CE47B0234096160060A9D9 /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CE47AF234096160060A9D9 /* ContactListTableViewCell.swift */; };
+		21CE47B22340B1880060A9D9 /* ImageCacheUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CE47B12340B1880060A9D9 /* ImageCacheUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,9 +63,10 @@
 		21685CA1233B8A3A009DF579 /* ContactDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsModel.swift; sourceTree = "<group>"; };
 		21CE47A723407F070060A9D9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		21CE47A9234082340060A9D9 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
-		21CE47AB234083170060A9D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		21CE47AB234083170060A9D9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		21CE47AD23408C550060A9D9 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		21CE47AF234096160060A9D9 /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewCell.swift; sourceTree = "<group>"; };
+		21CE47B12340B1880060A9D9 /* ImageCacheUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				21685C9C233A6EA6009DF579 /* NetworkUtility.swift */,
-				21CE47AB234083170060A9D9 /* Constants.swift */,
+				21CE47AB234083170060A9D9 /* Utility.swift */,
+				21CE47B12340B1880060A9D9 /* ImageCacheUtility.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -329,11 +332,12 @@
 				21685C6E233A6AFA009DF579 /* SceneDelegate.swift in Sources */,
 				21685CA0233B681D009DF579 /* ContactModel.swift in Sources */,
 				21CE47AA234082340060A9D9 /* ContactTableViewController.swift in Sources */,
+				21CE47B22340B1880060A9D9 /* ImageCacheUtility.swift in Sources */,
 				21685C70233A6AFA009DF579 /* ContentView.swift in Sources */,
 				21CE47B0234096160060A9D9 /* ContactListTableViewCell.swift in Sources */,
 				21685CA2233B8A3A009DF579 /* ContactDetailsModel.swift in Sources */,
 				21CE47AE23408C550060A9D9 /* SpinnerViewController.swift in Sources */,
-				21CE47AC234083170060A9D9 /* Constants.swift in Sources */,
+				21CE47AC234083170060A9D9 /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

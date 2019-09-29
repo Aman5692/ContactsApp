@@ -192,6 +192,20 @@ public class NetworkUtility {
             }
         })
     }
+    
+    static func downloadImageForURL(url: String, handler: @escaping (Data?,Error?) -> Void) {
+        guard let request = NetworkUtility.createRequestWithUrl(urlString: url, methodType: "GET") else {
+            print("Invalid request, contact can not be posted to server")
+            return
+        }
+        NetworkUtility.makeNetworkRequest(request: request, handler: { (data, error) in
+            if(data != nil && error == nil) {
+                handler(data,nil)
+            } else {
+                handler(nil,NetworkUtilityError.invalidData)
+            }
+        })
+    }
 }
 
 

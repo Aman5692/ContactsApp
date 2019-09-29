@@ -10,16 +10,20 @@ import UIKit
 
 class ContactTableViewController: UITableViewController {
     
-    @IBAction func createNewContact(_ sender: UIBarButtonItem) {
-    }
-    
     var dataSourceArray : Array = Array<ContactListModel>.init()
     let spinnerVC = SpinnerViewController()
     
+    @IBAction func createNewContact(_ sender: UIBarButtonItem) {
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.customiseTableView()
+        
         self.createAndStartSpinner()
+        
         NetworkUtility.getContactsList(handler: { (responseList, error) in
             self.removeSpinner()
             guard let data = responseList else {
@@ -29,28 +33,21 @@ class ContactTableViewController: UITableViewController {
             self.dataSourceArray = data
             self.reloadTableView(sync: true)
         })
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    // MARK: - Utility Methods
     
     func customiseTableView() {
         self.tableView.rowHeight = CGFloat(kContactListCellHeight)
+        self.tableView.separatorColor = UIColor(hexString: "#F0F0F0")
+        
     }
     
     func reloadTableView(sync : Bool) {
-        if(sync) {
-            DispatchQueue.main.sync {
-                self.tableView.reloadData()
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        let block : CompletionBlock = {
+            self.tableView.reloadData()
         }
+        performBlockOnMainThread(sync: sync, block: block)
     }
     
     func createAndStartSpinner() {
@@ -89,16 +86,23 @@ class ContactTableViewController: UITableViewController {
             return cell
         }
         let model : ContactListModel = self.dataSourceArray[indexPath.row]
-//        customCell.imageView =
+        ImageCacheUtility.downloadImage(url: model.profilePic, handler: { (image, error) in
+            if let error = error {
+                print("Unable to fetch profile pic for URL : with error",model.profilePic,error)
+            }
+            else if let image = image {
+                let block : CompletionBlock = {
+                    customCell.imageView?.image = image
+                }
+                performBlockOnMainThread(sync: true, block: block)
+            }
+        })
         customCell.acountNameLabel.text = model.firstName + " " + model.lastName
         customCell.favouriteImageView.isHidden = !model.favorite
         // Configure the cell...
 
         return customCell
     }
-    
-    // MARK: - Table view delegate
-    
 
     /*
     // Override to support conditional editing of the table view.
